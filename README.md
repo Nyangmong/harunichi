@@ -35,22 +35,7 @@
 ### 개발 도구 / 開発ツール  
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![STS3](https://img.shields.io/badge/STS3-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
-![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white)
-![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white)
-
-### 개발 언어 / 開発言語  
-![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
-![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=OpenJDK&logoColor=white)
-![Servlet](https://img.shields.io/badge/Servlet-007396?style=for-the-badge&logo=OpenJDK&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black)
-![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
-![MyBatis](https://img.shields.io/badge/MyBatis-000000?style=for-the-badge&logo=MyBatis&logoColor=white)
-![Tiles](https://img.shields.io/badge/Tiles-blue?style=for-the-badge)
-
-### 사용 API / 使用API  
-- [카카오 로그인 API / カカオログインAPI](https://developers.kakao.com/docs/latest/ko/kakaologin/common)  
-- [포트원 결제 API / ポートワン決済API (KG이니시스, 엑심베イ)](https://developers.portone.io/api/rest-v1/pg)
+![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?style이)](https://developers.portone.io/api/rest-v1/pg)
 
 ---
 
