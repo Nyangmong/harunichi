@@ -2,128 +2,129 @@
 
 ***
 
-# :sparkles: 개요
-- **프로젝트명**: Harunichi (한일 소셜미디어 플랫폼)
-- **기간**: 2025.05.26 ~ 2025.06.30
-- **목표**: 한국과 일본 사용자가 함께 커뮤니케이션하고 중고거래도 가능한 웹 기반 소셜미디어 플랫폼 개발
+# :sparkles: 개요 / 概要
+- **프로젝트명 / プロジェクト名**: Harunichi (한일 소셜미디어 플랫폼 / 日韓ソーシャルメディアプラットフォーム)
+- **기간 / 期間**: 2025.05.26 ~ 2025.06.30
+- **목표 / 目的**: 한국과 일본 사용자가 함께 커뮤니케이션하고 중고거래도 가능한 웹 기반 소셜미디어 플랫폼 개발  
+  日本と韓国のユーザーが共にコミュニケーションし、中古取引も可能なWebベースのソーシャルメディアプラットフォームを開発
 
-## :busts_in_silhouette: 팀원
-- Member : 강혜미 (<https://github.com/hyeming-way>)
-- Member : 이지원 (<https://github.com/jeejeewon>)
-- Member : 윤지원 (<https://github.com/YOON-J11>)
-- Member : 한현주 (<https://github.com/Nyangmong>)
-
-## 📑 목차
-- [개발 환경](#sunny-개발-환경)
-- [구현한 기능들](#hatched_chick-구현한-기능들)
-- [DB 구성](#shaved_ice-db-구성)
-- [마무리 소감](#carousel_horse-마무리-소감)
+## :busts_in_silhouette: 팀원 / チームメンバー
+- 강혜미 (<https://github.com/hyeming-way>)
+- 이지원 (<https://github.com/jeejeewon>)
+- 윤지원 (<https://github.com/YOON-J11>)
+- 한현주 (<https://github.com/Nyangmong>)
 
 ***
 
-# :sunny: 개발 환경
+# :sunny: 개발 환경 / 開発環境
 
-### 👀 View
+### View / フロントエンド  
 ![JSP](https://img.shields.io/badge/JSP-007524?style=for-the-badge&logo=OpenJDK&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-### 🎉 DB
+### DB / データベース  
 ![MySQL](https://img.shields.io/badge/MySQL-F80000?style=for-the-badge&logo=mysql&logoColor=white)
 
-### 🔥 Server
+### Server / サーバー  
 ![Tomcat](https://img.shields.io/badge/Tomcat9-0054FF?style=for-the-badge&logo=apachetomcat&logoColor=white)
 
-### 🌌 개발 도구
+### 개발 도구 / 開発ツール  
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
-![GitHub](https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white)
 
-### 🌠 개발 언어
+### 개발 언어 / 開発言語  
 ![Spring](https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![Java](https://img.shields.io/badge/java-007396?style=for-the-badge&logo=OpenJDK&logoColor=white)
 ![Servlet](https://img.shields.io/badge/servlet-007396?style=for-the-badge&logo=OpenJDK&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black)
 ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
 
-### ⭐ 사용 API
-- [카카오 로그인 API](https://developers.kakao.com/docs/latest/ko/kakaologin/common)
-- [아임포트 포트원 결제 API (KG이니시스, 엑심베이)](https://developers.portone.io/api/rest-v1/pg)
+### 사용 API / 使用API  
+- [카카오 로그인 API / カカオログインAPI](https://developers.kakao.com/docs/latest/ko/kakaologin/common)  
+- [포트원 결제 API / ポートワン決済API](https://developers.portone.io/api/rest-v1/pg)
 
 ***
 
-# :hatched_chick: 구현한 기능들
+# :hatched_chick: 구현한 기능들 / 実装機能
 
-## 🏠 메인화면
+## 🏠 메인화면 / メイン画面  
 ![메인화면](./harunichi/main.png)
 
----
+## 👥 회원 기능 / 会員機能  
+**로그인 / ログイン**  
+![로그인](./harunichi/login.png)
 
-## 👥 회원 기능
-<details><summary>로그인</summary><img src="./harunichi/login.png"></details>
-<details><summary>회원가입</summary><img src="./harunichi/signUp.png"></details>
-<details><summary>회원정보 수정/탈퇴</summary><img src="./harunichi/modifyMember.png"></details>
-<details><summary>아이디/비밀번호 찾기</summary><img src="./harunichi/emailVeri.png"></details>
+**회원가입 / 会員登録**  
+![회원가입](./harunichi/signUp.png)
 
----
+## 📝 게시판 / 掲示板  
+**공지사항 게시판 / お知らせ掲示板**  
+![공지사항](./harunichi/newsBoard.png)
 
-## 📝 게시판
-<details><summary>공지사항 게시판</summary><img src="./harunichi/newsBoard.png"></details>
-<details><summary>상품 리뷰 게시판</summary><img src="./harunichi/reviewBoard.png"></details>
+## 💬 채팅 기능 / チャット機能  
+**채팅 친구 추천 / チャット相手推薦**  
+![친구추천](./harunichi/chat1_chatMemberList.PNG)
 
----
+**개인 채팅 / 個人チャット**  
+![개인채팅](./harunichi/chat2_personalChat.PNG)
 
-## 💬 채팅 기능
-<details><summary>채팅 친구 추천</summary><img src="./harunichi/chat1_chatMemberList.PNG"></details>
-<details><summary>개인채팅</summary><img src="./harunichi/chat2_personalChat.PNG"></details>
-<details><summary>오픈채팅</summary><img src="./harunichi/chat3_openChat.PNG"></details>
-<details><summary>대화 내역 검색</summary><img src="./harunichi/chat4_searchMessage.PNG"></details>
-<details><summary>채팅방 정보 확인</summary><img src="./harunichi/chat5_chatRoomInfo.PNG"></details>
-<details><summary>채팅방 나가기</summary><img src="./harunichi/chat6_chatLeave1.PNG"><img src="./harunichi/chat7_chatLeave2.PNG"></details>
-<details><summary>오픈 채팅 방장 권한</summary><img src="./harunichi/chat8_chatLeader.PNG"></details>
-<details><summary>중고거래 채팅</summary><img src="./harunichi/chat9_productChat.PNG"></details>
-<details><summary>채팅 관리 페이지</summary><img src="./harunichi/chat10_chatAdmin.PNG"></details>
+**중고거래 채팅 / 中古取引チャット**  
+![중고채팅](./harunichi/chat9_productChat.PNG)
 
----
+## 🛍 중고상품 기능 / 中古商品機能  
+**메인 화면 / メイン画面**  
+![상품메인](./harunichi/01productMain.png)
 
-## 🛍 중고상품 기능
-<details><summary>메인 화면</summary><img src="./harunichi/01productMain.png"></details>
-<details><summary>중고상품 리스트</summary><img src="./harunichi/02productList.png"></details>
-<details><summary>중고상품 상세</summary><img src="./harunichi/03producDetail.png"></details>
-<details><summary>글 등록</summary><img src="./harunichi/04productWrite.png"></details>
-<details><summary>글 수정</summary><img src="./harunichi/05productEdit.png"></details>
-<details><summary>KG이니시스 결제</summary><img src="./harunichi/06producKGinisis.png"></details>
-<details><summary>엑심베이 결제</summary><img src="./harunichi/07producEximbay.png"></details>
-<details><summary>내 주문 내역</summary><img src="./harunichi/08producMyOrder.png"></details>
+**상품 리스트 / 商品リスト**  
+![리스트](./harunichi/02productList.png)
 
----
+**상품 상세 / 商品詳細**  
+![상세](./harunichi/03producDetail.png)
 
-## 🔌 API 연동 화면
-<details><summary>카카오 로그인</summary><img src="./harunichi/kakaoLogin.png"></details>
-<details><summary>포트원 KG이니시스 결제</summary><img src="./harunichi/09producKGinisisPay.png"></details>
-<details><summary>포트원 엑심베이 결제</summary><img src="./harunichi/10producEximbayPay.png"></details>
+**상품 등록 / 商品登録**  
+![등록](./harunichi/04productWrite.png)
+
+**상품 수정 / 商品修正**  
+![수정](./harunichi/05productEdit.png)
+
+**KG이니시스 결제 / KGイニシス決済**  
+![KG이니시스](./harunichi/06producKGinisis.png)
+
+**엑심베이 결제 / Eximbay決済**  
+![엑심베이](./harunichi/07producEximbay.png)
+
+**주문 내역 확인 / 注文履歴確認**  
+![주문내역](./harunichi/08producMyOrder.png)
+
+## 🔌 API 연동 / API連携  
+**카카오 로그인 / カカオログイン**  
+![카카오](./harunichi/kakaoLogin.png)
+
+**KG이니시스 결제 API / KGイニシス決済API**  
+![KG API](./harunichi/09producKGinisisPay.png)
+
+**엑심베이 결제 API / Eximbay決済API**  
+![엑심베이 API](./harunichi/10producEximbayPay.png)
 
 ***
 
-# :shaved_ice: DB 구성
-![ERD](./harunichi/BookShopERD.png)
+# :shaved_ice: DB 구성 / DB構成  
+![ERD](./harunichi/ERD.png)
 
 ***
 
-## :carousel_horse: 마무리 소감
-<details>
-  <summary>:pencil2: Wrap Up</summary>
-  <img src="./harunichi/mingmingg.png">
-  <img src="./harunichi/jjongaa.png">
-  <img src="./harunichi/jjongaa.png">
-  <img src="./harunichi/11productHan.png">
-</details>
+## :carousel_horse: 마무리 소감 / 最後の感想  
+**한현주 / ハン・ヒョンジュ**  
+![소감](./harunichi/11productHan.png)  
+프로젝트를 통해 실시간 채팅, 상품 관리, 결제 시스템 등 다양한 웹 기술을 경험했습니다. 기술 스택을 넘나들며 프론트엔드와 백엔드를 모두 구현하고 테스트하는 과정은 실무 역량을 성장시켜 주었습니다. 특히 사용자 경험을 고려한 설계와 기능 구현에 집중하며, 서비스 개발 전반의 감각을 익힐 수 있었습니다.  
+このプロジェクトを通じて、リアルタイムチャット、商品管理、決済システムなど、多様なWeb技術を経験しました。フロントエンドとバックエンドの両方を担当し、ユーザー体験を意識した設計と実装に注力したことで、現場感覚を育むことができました。
 
 ---
 
-# Harunichi
-
+# Harunichi  
 > 당신의 하루를 일본어와 한국어로 이어주는 소셜 플랫폼  
-> 글로벌 소통의 가치를 담은 Harunichi를 경험해보세요 🌏
+> あなたの一日を日本語と韓国語でつなぐソーシャルプラットフォーム 🌏
