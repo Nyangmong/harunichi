@@ -16,6 +16,8 @@
 - 이지원 (<https://github.com/jeejeewon>)
 - 윤지원 (<https://github.com/YOON-J11>)
 - 한현주 (<https://github.com/Nyangmong>)
+- ![팀원소개](./harunichi/team.png)
+
 
 ***
 
@@ -64,6 +66,9 @@
 **회원가입 / 会員登録**  
 ![회원가입](./harunichi/signUp.png)
 
+**회원정보 수정 / 탈퇴 / 会員情報の修正・退会**  
+![회원정보](./harunichi/modifyMember.png)
+
 ## 📝 게시판 / 掲示板  
 **게시판 / 掲示板**  
 ![게시판](/harunichi/newsBoard.png)
@@ -75,8 +80,21 @@
 **개인 채팅 / 個人チャット**  
 ![개인채팅](./harunichi/chat2_personalChat.PNG)
 
-**중고거래 채팅 / 中古取引チャット**  
-![중고채팅](./harunichi/chat9_productChat.PNG)
+**오픈 채팅 / オープンチャット**  
+![오픈채팅](./harunichi/chat3_openChat.PNG)
+
+**대화 내역 검색 / チャット履歴検索**  
+![검색](./harunichi/chat4_searchMessage.PNG)
+
+**채팅방 정보 / チャットルーム情報**  
+![정보](./harunichi/chat5_chatRoomInfo.PNG)
+
+**채팅방 나가기 / チャットルームから退出**  
+![나가기1](./harunichi/chat6_chatLeave1.PNG)  
+![나가기2](./harunichi/chat7_chatLeave2.PNG)
+
+**방장 권한 / チャットリーダー権限**  
+![방장](./harunichi/chat8_chatLeader.PNG)
 
 ## 🛍 중고상품 기능 / 中古商品機能  
 **메인 화면 / メイン画面**  
@@ -88,11 +106,8 @@
 **상품 상세 / 商品詳細**  
 ![상세](./harunichi/03producDetail.png)
 
-**상품 등록 / 商品登録**  
-![등록](./harunichi/04productWrite.png)
-
-**상품 수정 / 商品修正**  
-![수정](./harunichi/05productEdit.png)
+**상품 등록,수정 / 商品登録,修正**  
+![등록 수정](./harunichi/04productWrite.png)
 
 **KG이니시스 결제 / KGイニシス決済**  
 ![KG이니시스](./harunichi/06producKGinisis.png)
