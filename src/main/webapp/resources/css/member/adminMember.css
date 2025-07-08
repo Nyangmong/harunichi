@@ -1,0 +1,214 @@
+.scroll-area {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	border-radius: 0;
+}
+/*탭*/
+.tabs {
+	display: flex;
+}
+
+.tabs a {
+	padding: 15px;
+	border-bottom: 3px solid transparent;
+	text-decoration: none;
+	color: #888;
+	font-size: 16px;
+}
+
+.tabs a:hover {
+	background-color: #f4f4f4;
+}
+
+.tabs a.active {
+	border-bottom-color: #A3DAFF;
+	font-weight: bold;
+	color: #222;
+}
+
+/*검색 폼*/
+.header-search-form {
+	display: flex;
+	gap: 5px;
+	width: 100%;
+	max-width: 700px;
+	min-width: 200px;
+}
+
+.header-search-form select {
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	background-color: #fff;
+	font-size: 14px;
+	flex: none;
+	width: 100px;
+}
+
+.header-search-form input[type="text"] {
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	background-color: #fff;
+	font-size: 14px;
+	flex: 1;
+	min-width: 50px;
+}
+
+.header-search-form button {
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	background-color: #f4f4f4;
+	font-size: 14px;
+	flex: none;
+	width: auto;
+	white-space: nowrap;
+}
+
+.header-search-form button:hover {
+	background-color: #d9d9d9;
+}
+
+/*테이블 영역*/
+table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+thead {
+	background-color: #f9f9f9;
+}
+
+thead th {
+	padding: 12px 6px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+	font-size: 14px;
+	white-space: nowrap;
+}
+
+tbody td {
+	padding: 6px;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+}
+
+tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.profile-cell {
+	display: flex;
+	flex-direction: column; align-items : center;
+	gap: 5px;
+	justify-content: center;
+	align-items: center; /* 중앙에 모으기 */
+}
+
+tbody .table-img {
+	width: 50px;
+	height: 50px;
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid #eee;
+}
+
+tbody .table-img img {
+	width: 100%; object-fit : cover;
+	display: block;
+	object-fit: cover;
+}
+
+table input[type="text"], table input[type="date"] {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 6px;
+	font-size: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+table select {
+	width: 100%;
+	min-width: 60px;
+	padding: 6px;
+	font-size: 12px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+table button {
+	padding: 4px;
+	font-size: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #f4f4f4;
+	cursor: pointer;
+}
+
+table button:hover {
+	background-color: #d9d9d9;
+}
+
+/*저장, 삭제 버튼*/
+.submit-btn-class {
+	display: flex;
+	gap: 10px;
+	padding-top: 15px;
+}
+
+.submit-btn-class button {
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	background-color: #f4f4f4;
+	font-size: 14px;
+	flex: none;
+	width: auto;
+	white-space: nowrap;
+}
+
+.submit-btn-class button:hover {
+	background-color: #d9d9d9;
+}
+
+/*페이징 버튼*/
+.pagination {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	margin-top: 20px;
+	flex-wrap: wrap;
+}
+
+.pagination a {
+	padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    background-color: #fff;
+    transition: background-color 0.2s;
+}
+
+.pagination a:hover {
+	background-color: #d9d9d9;
+}
+
+.pagination a.active-page {
+	background-color: #A3DAFF;  /* 하늘색 */
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;  /* 밑줄 제거 */
+    border-color: #A3DAFF;
+}

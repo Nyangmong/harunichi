@@ -1,0 +1,33 @@
+# Java build files
+/bin/
+/build/
+/target/
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# Maven
+/logs/
+*.log
+*.war
+*.ear
+
+# STS (Spring Tool Suite)
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+# OS 관련
+.DS_Store
+Thumbs.db
+
+# 기타 IDE 캐시
+*.iml
+.idea/
+out/

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.reply">
+
+	<!-- id: DAO/Mapper 인터페이스에서 호출할 메소드 이름 -->
+	<!-- parameterType: SQL 쿼리에 전달될 파라미터의 타입 (게시글 ID) -->
+	<!-- resultType: 쿼리 결과를 매핑할 객체의 타입 (ReplyVo 객체 리스트) -->
+
+	<!-- 특정 게시글의 모든 댓글 삭제 -->
+	<delete id="deleteRepliesByBoardId" parameterType="int">
+		DELETE FROM
+		reply
+		WHERE boardId = #{boardId}
+	</delete>
+
+	<!-- 댓글 작성 (대댓글 포함) -->
+	<insert id="insertReply"
+		parameterType="com.harunichi.board.vo.ReplyVo">
+		INSERT INTO reply (
+		boardId, replyCont, replyWriter, replyWriterId, replyDate, replyLike, parentId
+		) VALUES (
+		#{boardId}, #{replyCont}, #{replyWriter}, #{replyWriterId}, NOW(), 0, #{parentId}
+		)
+	</insert>
+
+	<!-- 댓글 목록 조회 (일반댓글 + 대댓글 포함, 계층 정렬) -->
+	<select id="selectRepliesByBoardId" parameterType="int"
+		resultType="com.harunichi.board.vo.ReplyVo">
+		SELECT replyId, boardId, replyCont, replyWriter, replyWriterId,
+		replyWriterImg, replyDate, replyLike, parentId
+		FROM reply
+		WHERE boardId = #{boardId}
+		ORDER BY
+		COALESCE(parentId, replyId),
+		parentId IS NOT NULL,
+		replyDate ASC
+	</select>
+
+	<!-- 특정 게시글의 댓글 갯수 -->
+	<select id="countRepliesByBoardId" parameterType="int"
+		resultType="int">
+		SELECT COUNT(*)
+		FROM reply
+		WHERE boardId = #{boardId}
+	</select>
+
+	<!-- 댓글 삭제 -->
+	<delete id="deleteReply" parameterType="map">
+		DELETE FROM reply
+		WHERE
+		replyId = #{replyId}
+		AND replyWriter = #{currentUserId};
+	</delete>
+
+	<!-- 댓글 수정 -->
+	<update id="updateReply" parameterType="map">
+		UPDATE reply
+		SET replyCont
+		= #{replyCont}
+		WHERE replyId = #{replyId} AND replyWriter =
+		#{replyWriter}
+	</update>
+
+
+</mapper>

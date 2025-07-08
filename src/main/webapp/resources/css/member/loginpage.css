@@ -1,0 +1,149 @@
+
+.loginpage-wrap{
+	width: calc(100% - 20px);
+	max-width: 768px;
+	margin: 0 auto;
+}
+
+
+
+.loginpage-middle{
+	text-align: center;
+	padding: 40px 20px;
+	border-bottom: 1px solid #ddd;
+	
+}
+.loginpage-middle p{
+	font-size: 24px;
+}
+
+/*입력 영역*/
+form{
+	display: flex;
+	flex-direction: column;
+	gap : 10px;
+	padding: 30px 20px 10px 20px;
+	margin-bottom: 30px;
+}
+form input[type="text"],
+form input[type="password"]{
+	border: 1px solid #ddd;
+    padding: 15px;
+    outline: none;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    font-size: 16px;
+}
+.error_message{
+	color: red;
+	font-size: 14px;
+	text-align: center;
+}
+form input:focus-within{
+	border: 1px solid #A3DAFF;
+}
+form button{
+	width: 100%;
+	height: 45px;
+	border: 1px solid #222;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+form button img{
+	width: auto;
+	height: 20px;
+}
+form button span{
+	font-size: 16px;
+}
+form button::after {
+    content: "";
+    display: block; 
+    width: 20px;
+    height: 20px; 
+    flex-shrink: 0;
+}
+
+.login-btn{
+	border: 1px solid #A3DAFF;
+	color: #A3DAFF;
+	border-radius: 15px;
+	padding: 12px;
+	font-size: 16px;
+	font-weight: bold;
+	display: block;
+}
+.login-btn:hover{
+	color: white;
+	background-color: #A3DAFF;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+.separator span{
+	color: #888;
+	font-size: 16px;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.separator::before {
+  margin-right: 10px;
+}
+
+.separator::after {
+  margin-left: 10px;
+}
+
+.separator span {
+  white-space: nowrap;
+}
+
+#socialLogin{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.find-join-links{
+	padding: 15px;
+	font-size: 14px;
+	color: #888;
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	align-items: center;
+}
+
+.find-join-links a {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+
+.find-join-links a::after {
+	content: "|";
+	display: inline-block;
+	margin-left: 5px;
+	color: #888;
+}
+.find-join-links a:last-child::after {
+	content: none;
+}
+

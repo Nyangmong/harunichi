@@ -1,0 +1,92 @@
+body {
+	background-color: #bfe6ff;
+}
+
+#wrap {
+	display: flex;
+	min-height: 100vh;
+}
+
+/*메뉴영역*/
+.side-wrap {
+	width: 250px;
+	height: 100%;
+	background-color: white;
+	padding: 20px;
+	box-sizing: border-box;
+	flex: 0 0 auto;
+	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-area img {
+	width: 200px;
+}
+
+.menu-area {
+	padding: 20px 0;
+}
+
+.menu-area nav ul {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.menu-area nav ul li a {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	padding: 10px 16px;
+	border-radius: 10px;
+}
+
+.menu-area nav ul li a:hover {
+	background-color: #e6e6e6;
+}
+
+.menu-area nav ul li a.active {
+	background-color: #A3DAFF;
+}
+
+.menu-area nav ul li a.active span {
+	color: white;
+}
+
+.back-home {
+	margin-top: 20px;
+}
+
+.back-home a {
+	padding: 10px 16px;
+	color: #888;
+}
+
+.back-home a:hover {
+	color: #A3DAFF;
+}
+
+/*컨테이너 화면*/
+article {
+	flex: 1;
+	padding: 20px;
+	min-width: 0;
+	min-height: 0;
+	overflow: hidden;
+}
+
+.article-inner {
+	flex: none;
+	width: 100%;
+	height: calc(100vh - 40px);
+	overflow: hidden;
+	border-radius: 20px;
+	background: white;
+	padding: 20px;
+}
+
+.scroll-area {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	border-radius: inherit;
+}

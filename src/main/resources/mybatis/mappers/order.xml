@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="order">
+
+    <!-- OrderVo 필드와 매핑되는 resultMap -->
+    <resultMap id="OrderResultMap" type="OrderVo">
+        <id property="impUid" column="imp_uid" />
+        <result property="merchantUid" column="merchant_uid" />
+        <result property="productId" column="product_id" />
+        <result property="productName" column="product_name" />
+        <result property="amount" column="amount" />
+        <result property="buyerId" column="buyer_id" />
+        <result property="buyerName" column="buyer_name" />
+        <result property="status" column="status" />
+        <result property="orderDate" column="order_date" />
+    </resultMap>
+
+    <!-- 주문 등록 -->
+    <insert id="insertOrder" parameterType="OrderVo">
+        INSERT INTO orders (
+            imp_uid,
+            merchant_uid,
+            product_id,
+            product_name,
+            amount,
+            buyer_id,
+            buyer_name,
+            status,
+            order_date
+        ) VALUES (
+            #{impUid},
+            #{merchantUid},
+            #{productId},
+            #{productName},
+            #{amount},
+            #{buyerId},
+            #{buyerName},
+            #{status},
+            NOW()
+        )
+    </insert>    
+
+    <!-- imp_uid로 단건 주문 조회 (검증 용도) -->
+    <select id="findByImpUid" parameterType="string" resultMap="OrderResultMap">
+        SELECT *
+        FROM orders
+        WHERE imp_uid = #{impUid}
+        LIMIT 1
+    </select>
+
+    <!-- 사용자별 주문 내역 조회 -->
+    <select id="selectOrdersByBuyerId" parameterType="string" resultMap="OrderResultMap">
+        SELECT *
+        FROM orders
+        WHERE buyer_id = #{buyerId}
+        ORDER BY order_date DESC
+    </select>
+
+    <!-- 주문 상태 업데이트 -->
+    <update id="updateOrderStatus" parameterType="OrderVo">
+        UPDATE orders
+        SET status = #{status}
+        WHERE merchant_uid = #{merchantUid}
+    </update>
+
+</mapper>

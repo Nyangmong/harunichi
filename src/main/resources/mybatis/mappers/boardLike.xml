@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.boardLike">
+
+	<!-- 게시글 좋아요 -->
+	<insert id="insertBoardLike">
+		insert into boardLike (boardLikeUser, boardLikePost)
+		values
+		(#{boardLikeUser}, #{boardLikePost})
+	</insert>
+
+	<!-- 사용자가 특정 게시글에 좋아요를 눌렀는지 확인 -->
+	<select id="selectMyLikeCount" resultType="int">
+		select count(*) from
+		boardLike
+		where boardLikePost = #{boardLikePost}
+		and boardLikeUser = #{boardLikeUser}
+	</select>
+
+	<!-- 게시글 좋아요 취소 -->
+	<delete id="deleteBoardLike">
+		delete from boardLike
+		where boardLikePost =
+		#{boardLikePost}
+		and boardLikeUser = #{boardLikeUser}
+	</delete>
+
+	<!-- 특정 게시글의 총 좋아요 갯수 -->
+	<select id="selectTotalLikeCount" resultType="int">
+		select count(*)
+		from boardLike
+		where boardLikePost = #{boardLikePost}
+	</select>
+
+</mapper>

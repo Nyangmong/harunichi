@@ -1,0 +1,81 @@
+
+.email-auth-wrap{
+	width: calc(100% - 20px);
+	max-width: 768px;
+	margin: 0 auto;
+	padding: 40px 20px;
+}
+.email-auth-middle{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.email-auth-middle > h2{ font-weight: 400;}
+.email-auth-middle > p{ color: #888;}
+.email-auth-middle > img{ 
+	width: 150px;
+	height: auto;
+	margin-top: 20px;
+	}
+#loading-spinner{
+	text-align: center;
+}
+#loading-spinner img{ width: 70px; height: auto;}
+#loading-spinner p { color: #888}
+#emailAuthForm{
+	width: 100%;
+	max-width: 350px;
+	min-width: 100px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 40px;
+}
+input[type="text"], input[type="email"]{
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: #fff;
+    flex-grow: 1;
+    width:100%;
+    max-width: 350px;
+    padding: 15px;
+    outline: none;
+}
+
+input[type="text"]:focus-within, input[type="email"]:focus-within {
+    border: 1px solid #A3DAFF;
+}
+
+button{
+	width: 100%;
+	border: 1px solid #A3DAFF;
+	color: #A3DAFF;
+	border-radius: 15px;
+	padding: 12px;
+	font-size: 16px;
+	font-weight: bold;
+	display: block;
+}
+
+button:hover{
+	color: white;
+	background-color: #A3DAFF;
+}
+
+.resend{
+	border: 1px solid #ddd;
+	color: #888;
+	font-weight: 400;
+}
+.resend:hover{
+	color: white;
+	background-color: #ddd;
+}
+
+.buttons{
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+}

@@ -1,0 +1,129 @@
+article{
+	border-right: 1px solid #eee;
+}
+.follow-wrap{
+	display: flex;
+	flex-direction: column;
+}
+.follow-inner-header{
+	padding: 20px;
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.follow-inner-header a img {
+	width: 20px;
+	height: auto;
+}
+
+.follow-inner-header-user-info{
+	display: flex;
+	flex-direction: column;
+}
+.follow-inner-header-user-info p {
+	font-size: 20px;
+	font-weight: bold;
+}
+.follow-inner-header-user-info span{
+	font-size: 12px;
+	color: #888;
+}
+.follow-tabs{
+	border-bottom: 1px solid #eee;
+}
+.follow-tabs>div{
+	display: flex;
+	padding: 0 20px;
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+}
+.follow-tabs a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #888;
+    width: 100%;
+    text-align: center;
+}
+.follow-tabs .active {
+    border-bottom: 4px solid #A3DAFF;
+    color: #000;
+}
+
+.follow-item {
+    padding: 20px;
+}
+.follow-item:hover{
+	background-color: #f4f4f4;
+}
+.follow-item-inner{
+	display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.follow-item-inner a {
+	display: flex;
+	align-items: center;
+	flex: 1;
+}
+.follow-item-inner a .follow-item-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    overflow: hidden;
+}
+.follow-item-inner a .follow-item-img img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+.follow-item-inner a .follow-info{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+.follow-info span:first-child{
+	font-weight: bold;
+}
+.follow-info span:last-child{
+	color: #888;
+	font-size: 12px;
+}
+
+.follow-btn {
+	padding: 0 15px;
+	height: 35px;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	font-size: 16px;
+	color: #A3DAFF;
+	border: 1px solid #A3DAFF;
+}
+
+.follow:hover {
+	background-color: rgba(163, 218, 255, 0.2);
+}
+
+.following {
+	background-color: #A3DAFF;
+	color: #fff;
+	border: 1px solid #A3DAFF;
+}
+
+.unfollow {
+	background-color: transparent;
+	color: #ff4d4d;
+	border: 1px solid #ff4d4d;
+}
+

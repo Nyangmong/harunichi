@@ -1,0 +1,97 @@
+
+.addmemberform-wrap{
+	width: calc(100% - 20px);
+	max-width: 768px;
+	margin: 0 auto;
+}
+
+.addmemberform-middle{
+	display:flex;
+	gap: 20px;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 20px;
+	border-bottom: 1px solid #ddd;
+	
+}
+.addmemberform-middle img{
+	width: 40px;
+	height: auto;
+}
+.addmemberform-middle p{
+	font-size: 24px;
+}
+
+/* 하단 셀렉트박스 디자인*/
+/* 전체 감싸는 영역 */
+.select-country-area {
+	margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 15px;
+}
+.select-country-area .select2-container{
+	width: 100% !important;
+}
+.select-country-area .select2-selection--single{
+	padding: 12px !important;
+}
+
+/*가운데 버튼들 영역*/
+.register-options{
+	display: flex;
+	flex-direction: column;
+	gap : 20px;
+	padding: 30px 20px;
+	border-bottom: 1px solid #ddd;
+}
+.register-options button{
+	height: 45px;
+	border: 1px solid #222;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.register-options button img{
+	width: auto;
+	height: 20px;
+}
+.register-options button span{
+	font-size: 16px;
+}
+.register-options button::after {
+    content: "";
+    display: block; 
+    width: 20px;
+    height: 20px; 
+    flex-shrink: 0;
+}
+
+/*맨 아래 로그인버튼 영역*/
+.login-ask-area{
+	text-align: center;
+	padding: 20px;
+}
+
+.login-ask-area p{
+	margin-bottom: 20px;
+	color: #888;
+}
+
+.login-ask-area a{
+	border: 1px solid #A3DAFF;
+	color: #A3DAFF;
+	border-radius: 15px;
+	padding: 12px;
+	font-size: 16px;
+	font-weight: bold;
+	display: block;
+}
+.login-ask-area a:hover{
+	color: white;
+	background-color: #A3DAFF;
+}

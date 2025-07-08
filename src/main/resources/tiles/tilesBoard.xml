@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+     <!-- common -->
+    <definition name="baseLayout" template="/WEB-INF/views/common/layout.jsp">
+        <put-attribute name="title" value="레이아웃 페이지" />
+        <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+        <put-attribute name="side" value="/WEB-INF/views/common/side.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+    </definition>   
+    
+    <!-- 메인 페이지 -->
+    <definition name="/main/main" extends="baseLayout">
+		<put-attribute name="title" value="메인페이지" />
+		<put-attribute name="body" value="/WEB-INF/views/main/main.jsp" />
+	</definition>
+    
+	<definition name="/board/list" extends="baseLayout">
+		<put-attribute name="title" value="전체 게시글" />
+		<put-attribute name="body" value="/WEB-INF/views/board/list.jsp" />
+	</definition>
+	
+	<definition name="/board/postForm" extends="baseLayout">
+		<put-attribute name="title" value="게시글 등록" />
+		<put-attribute name="body" value="/WEB-INF/views/board/postForm.jsp" />
+	</definition>
+	
+	<definition name="/board/editForm" extends="baseLayout">
+		<put-attribute name="title" value="게시글 수정" />
+		<put-attribute name="body" value="/WEB-INF/views/board/editForm.jsp" />
+	</definition>
+	
+	<definition name="/board/view" extends="baseLayout">
+		<put-attribute name="title" value="게시글 상세" />
+		<put-attribute name="body" value="/WEB-INF/views/board/view.jsp" />
+	</definition>
+	
+	<definition name="/board/search" extends="baseLayout">
+		<put-attribute name="title" value="검색결과" />
+		<put-attribute name="body" value="/WEB-INF/views/board/searchResult.jsp" />
+	</definition>
+	
+	<definition name="/board/hots" extends="baseLayout">
+		<put-attribute name="title" value="인기글" />
+		<put-attribute name="body" value="/WEB-INF/views/board/hots.jsp" />
+	</definition>
+	
+	<definition name="/board/errorPage" extends="baseLayout">
+		<put-attribute name="title" value="오류페이지" />
+		<put-attribute name="body" value="/WEB-INF/views/board/errorPage.jsp" />
+	</definition>
+	
+</tiles-definitions>
+
+

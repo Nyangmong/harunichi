@@ -1,0 +1,294 @@
+@charset "UTF-8";
+/* 친구추천 */
+#chatMainCon{
+	display: flex;
+	align-items: center;      
+	justify-content: center;   
+	gap: 30px;              
+}
+.profile-con {	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center; 
+	text-align: center;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 20px 10px;
+	margin: 0 10px;
+	height: 360px;
+}
+.profile-con:hover{
+	transform: translateY(-8px); 
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}	
+.profile-img {
+	width: 120px;
+	height: 120px;
+	border-radius: 100%;
+	object-fit: cover;
+}
+.nick {
+	font-weight: bold;
+	font-size: 26px;
+	margin: 10px 0;
+}
+#recText {
+	font-size: 20px;
+	color: #797979;
+	font-weight: bold;
+	margin: 10px 0;
+}
+#mainChatTitle {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 70px 0 20px 0;
+	text-align: center;		
+}
+.chat-slider-container {
+	width: 1000px;
+	overflow-x: hidden; 
+	overflow-y: visible; 
+	position: relative;
+	padding: 10px 0 20px 0; 
+}
+.profile-list {
+	display: flex;
+	transition: transform 0.4s ease;
+	list-style: none; 
+}
+.profile-list li {
+	flex: 0 0 250px; 
+	max-width: 250px;
+	min-width: 200px;
+}
+.do-chat-btn { 
+	display: flex;
+	justify-content: center; 
+	align-items: center;    
+	text-align: center;
+	border-radius: 50px;	
+	font-size:15px;
+	color: #fff;
+	width: 90px;
+	height: 35px;
+	background-color: #a3daff;
+	margin-top: 15px;
+	text-decoration: none;
+}
+.do-chat-btn:hover { 
+	background-color: #53a5dc; 
+}
+.bi-arrow-right::before,
+.bi-arrow-left::before {
+	color: #797979;
+}
+.bi-arrow-right:hover::before,
+.bi-arrow-left:hover::before {
+	color: #a3daff;
+}
+.btn {
+	font-size: 40px;
+	color: #a3daff;
+}
+.btn:hover {
+	color: #53a5dc; 
+}
+/* 반응형에서 최소 너비 안 넘게 조절 */
+@media (max-width: 768px) {
+  .profile-list li {
+    flex: 0 0 200px;
+    max-width: 200px;
+    min-width: 200px; 
+  }
+}
+@media (max-width: 480px) {
+  .profile-list li {
+    flex: 0 0 100%;
+    max-width: 100%;
+    min-width: 100%; 
+  }
+}
+.empty-chat {
+	margin: 10px 0 50px 0;	
+}
+
+/* 오픈채팅 */
+#openTitle {
+	display: flex;
+	align-items: center;
+}
+.open-chat {
+	margin: 0;
+}
+#newOpenChatBtn {
+	display: flex;
+	justify-content: center; 
+	align-items: center;    
+	border-radius: 8px;	
+	font-size:16px;
+	color: #a3daff;
+	width: 70px;
+	height: 30px;
+	background-color: white;
+	font-weight: bold;
+	border: 1px solid #a3daff;
+	margin-left: 10px;
+}
+#newOpenChatBtn:hover {
+	background-color: #a3daff;
+	color: white;	
+}
+.open-chat-img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: #d6eef5; 
+	object-fit: cover;
+}
+.open-chat-list {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 20px;
+}
+.open-chat-item {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	padding: 12px 0;
+	border-bottom: 1px solid #e0e0e0;
+	cursor: pointer;
+}
+.open-chat-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.open-chat-title {
+	display: flex;
+	align-items: center;
+	gap: 5px; 
+}
+.sent-time {
+	margin-left: 10px;
+	color: #999; 
+	font-size: 0.9em;
+}
+.open-chat-content {
+	font-size: 0.9rem;
+	color: #888;
+	margin-top: 4px;
+}
+.openChatCon {
+	display: flex;
+	justify-content: center; 
+	flex-direction: column;
+	padding: 0 20px;
+}
+.open-chat-item:hover {
+	background-color: #f0f8ff;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transform: translateY(-3px); /* 살짝 올라감 */
+}
+
+/* 모달창 */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0; top: 0;
+	width: 100%; height: 100%;
+	background-color: rgba(0,0,0,0.4);
+}
+.modal h2 {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+	color: #a3daff;
+	text-align: center;
+}
+.open-chat-img-wrap {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin: 20px 0;
+}
+
+#imgUpload {
+	display: none;
+}
+
+.open-chat-profile-img{
+  	width: 120px;
+	height: 120px;
+	border-radius: 100%;
+	object-fit: cover;
+}
+.adit-profile-img.hidden {
+	display: none;
+}
+.adit-profile-img {
+	position: absolute;
+	bottom: 0;
+	right: 115px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	right: calc(50% - 60px + 5px);
+}
+
+.modal-content {
+	background-color: #fff;
+	margin: 10% auto auto;
+	padding: 20px;
+	border-radius: 8px;
+	width: 400px;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+#newChatForm {
+	display: block;
+	align-content: center;
+	margin: 0 10px 30px 10px;
+}
+#newChatForm label {
+	display: flex;
+}
+.modal-input-msg {
+	font-size: 13px;
+	color: #7d7d7d;
+	margin-bottom: 15px;
+}
+.err {
+	color: red;	
+}
+.open-chat-form {
+	display: block;
+	width: 100%;
+	height: 30px;
+	border: 1px solid #ccc; 
+}	
+.modal-btn-wrap {
+	display: flex;
+	justify-content: center;
+	gap: 10px; 
+	margin-top: 50px;
+}
+.modal-btn {
+	padding: 8px 16px;
+	background-color: #a3daff;
+	border-radius: 4px;
+	cursor: pointer;
+	color: white;
+}
+.modal-btn:hover {
+	background-color: #53a5dc; 
+}
+.close {
+	float: right;
+	font-size: 20px;
+	cursor: pointer;
+}

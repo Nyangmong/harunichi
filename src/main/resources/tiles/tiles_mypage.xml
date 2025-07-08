@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+    <definition name="/mypage" extends="baseLayout">
+		<put-attribute name="title" value="마이페이지" />
+		<put-attribute name="body" value="/WEB-INF/views/member/mypage.jsp" />
+	</definition>
+	
+	<definition name="/mypage/follow" extends="baseLayout">
+		<put-attribute name="title" value="팔로우리스트" />
+		<put-attribute name="body" value="/WEB-INF/views/member/followList.jsp" />
+	</definition>	
+	
+</tiles-definitions>
+

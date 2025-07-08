@@ -1,0 +1,298 @@
+article {
+	border-right: 1px solid #eee;
+}
+
+/* 상단 뒤로가기 + 검색 */
+.mypage-inner-header {
+	padding: 20px;
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.mypage-inner-header a img {
+	width: 20px;
+	height: auto;
+}
+
+/* 검색 영역 wrapper */
+.search-area-wrapper {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+}
+
+/* 돋보기 버튼 */
+.search-icon-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 8px;
+}
+
+.search-icon-btn img {
+	width: 20px;
+	height: auto;
+	filter: invert(20%) sepia(0%) saturate(0%) hue-rotate(0deg)
+		brightness(100%) contrast(100%);
+}
+
+/* 검색 폼 - 숨겨진 상태 */
+.header-search-form {
+	display: flex;
+	align-items: center;
+	border: 1px solid #ddd;
+	border-radius: 15px;
+	background-color: #fff;
+	max-width: 0;
+	opacity: 0;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: max-width 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+	overflow: hidden;
+}
+
+/* 검색 폼 - 활성화 */
+.header-search-form.active {
+	max-width: 300px;
+	opacity: 1;
+	transform: scaleX(1);
+}
+
+.header-search-form:focus-within {
+	border: 1px solid #A3DAFF;
+}
+
+.header-search-form input[type="text"] {
+	border: none;
+	padding: 10px 15px;
+	outline: none;
+	font-size: 14px;
+	flex-grow: 1;
+	min-width: 0;
+}
+
+.header-search-form button[type="submit"] {
+	background-color: white;
+	color: #fff;
+	border: none;
+	padding: 8px 10px;
+	cursor: pointer;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header-search-form button[type="submit"] img {
+	height: 20px;
+	width: auto;
+	vertical-align: middle;
+	filter: invert(81%) sepia(12%) saturate(2347%) hue-rotate(173deg)
+		brightness(105%) contrast(101%);
+}
+
+/* 상단 프로필 영역 */
+.mypage-profile-area {
+	display: flex;
+	gap: 20px;
+	padding: 10px 20px;
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.profile-area-left {
+	flex: 0 0 150px;
+}
+
+.profile-area-left img {
+	border-radius: 50%;
+	overflow: hidden;
+	border: 1px solid #eee;
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	display: block;
+}
+
+.profile-area-middle {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.nick-and-email {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+
+.nick-and-email span:first-child {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.nick-and-email span:last-child {
+	font-size: 12px;
+	color: #888;
+}
+
+.join-date {
+	display: flex;
+	gap: 5px;
+}
+
+.join-date img {
+	width: 18px;
+	height: auto;
+	filter: invert(49%) sepia(0%) saturate(1%) hue-rotate(151deg)
+		brightness(96%) contrast(89%);
+}
+
+.join-date p {
+	font-size: 12px;
+	color: #888;
+}
+
+.follow-area {
+	display: flex;
+	gap: 10px;
+}
+
+.follow-area a {
+	font-size: 14px;
+	color: #888;
+}
+
+.follow-area a:hover {
+	text-decoration: underline;
+}
+
+.follow-area a span {
+	font-weight: bold;
+}
+
+.chat-edit-follow {
+	flex: 0 0 auto;
+	display: flex;
+	gap: 10px;
+}
+
+.chat-btn {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #ddd;
+	transition: all 0.3s ease;
+}
+
+.chat-btn:hover {
+	background-color: #e6e6e6;
+}
+
+.chat-btn img {
+	width: 16px;
+	height: auto;
+	transform: translate(-1px, -1px);
+	filter: invert(49%) sepia(0%) saturate(1%) hue-rotate(151deg)
+		brightness(96%) contrast(89%);
+}
+
+.edit-btn, .follow-btn {
+	padding: 0 15px;
+	height: 35px;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	font-size: 16px;
+}
+
+.edit-btn {
+	border: 1px solid #ddd;
+}
+
+.edit-btn:hover {
+	background-color: #e6e6e6;
+}
+
+.follow-btn.follow {
+	color: #A3DAFF;
+	border: 1px solid #A3DAFF;
+}
+
+.follow-btn.follow:hover {
+	background-color: rgba(163, 218, 255, 0.2);
+}
+
+.follow-btn.following {
+	background-color: #A3DAFF;
+	color: #fff;
+	border: 1px solid #A3DAFF;
+}
+
+.follow-btn.unfollow {
+	background-color: transparent;
+	color: #ff4d4d;
+	border: 1px solid #ff4d4d;
+}
+
+/* 하단 콘텐츠 */
+.mypage-contents-area {
+	
+}
+
+.mypage-contents-tab {
+	border-bottom: 1px solid #eee;
+}
+
+.mypage-contents-tab-inner {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.mypage-contents-tab-inner a {
+	width: 100%;
+	color: #888;
+	text-align: center;
+	padding: 15px;
+}
+
+.mypage-contents-tab-inner a.active-tab {
+	background-color: #f0f0f0;
+	color: #222;
+}
+
+.mypage-contents-tab-inner a:hover {
+	background-color: #f4f4f4;
+}
+
+.board-list {
+	width: 100% !important;
+}
+
+.board-side {
+	display: none !important;
+}
+/*게시글 이중스크롤 안생기게*/
+.container.board.main,
+.board-list,
+.list-wrap {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}

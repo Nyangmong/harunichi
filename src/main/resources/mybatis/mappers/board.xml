@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.board">
+
+	<select id="selectBoardList"
+		resultType="com.harunichi.board.vo.BoardVo">
+		SELECT boardId, boardWriter,boardCont, boardDate,
+		boardLike,
+		boardCount, boardRe, boardCate, boardImg1,
+		boardImg2,boardImg3, boardImg4, boardWriterId
+		FROM
+		board
+		ORDER BY
+		boardDate DESC 
+	</select>
+
+	<insert id="insertBoard"
+		parameterType="com.harunichi.board.vo.BoardVo">
+		INSERT INTO board (
+		boardWriter, boardCont, boardCate,
+		boardImg1,
+		boardImg2, boardImg3, boardImg4, boardDate,
+		boardWriterId,boardWriterImg
+		)
+		VALUES (
+		#{boardWriter},
+		#{boardCont},
+		#{boardCate}, #{boardImg1},
+		#{boardImg2},
+		#{boardImg3}, #{boardImg4},
+		#{boardDate}, #{boardWriterId}, #{boardWriterImg}
+		)
+	</insert>
+
+	<update id="updateBoard"
+		parameterType="com.harunichi.board.vo.BoardVo">
+		UPDATE board
+		<set>
+			<if test="boardCont != null">
+				boardCont = #{boardCont},
+			</if>
+			<if test="boardCate != null">
+				boardCate = #{boardCate},
+			</if>
+			<!-- 이미지 필드는 null일 경우에도 업데이트 (NULL로 설정) -->
+			boardImg1 = #{boardImg1},
+			boardImg2 = #{boardImg2},
+			boardImg3 =
+			#{boardImg3},
+			boardImg4 = #{boardImg4},
+			<if test="boardModDate != null">
+				boardModDate = #{boardModDate},
+			</if>
+		</set>
+		WHERE boardId = #{boardId}
+	</update>
+
+	<select id="getBoardById" parameterType="int"
+		resultType="com.harunichi.board.vo.BoardVo">
+		SELECT
+		boardId, boardWriter, boardCont, boardDate,
+		boardLike, boardCount, boardRe,
+		boardCate, boardImg1, boardImg2,
+		boardImg3, boardImg4, boardWriterId
+		FROM board
+		WHERE boardId =
+		#{boardId}
+	</select>
+
+	<!-- 카운트 증감 -->
+	<update id="incrementBoardLike" parameterType="int">
+		UPDATE board
+		SET
+		boardLike = boardLike + 1
+		WHERE boardId = #{boardId}
+	</update>
+
+	<update id="incrementBoardCount" parameterType="int">
+		UPDATE board
+		SET
+		boardCount = COALESCE(boardCount, 0) + 1
+		WHERE boardId = #{boardId}
+	</update>
+
+	<update id="incrementBoardRe" parameterType="int">
+		UPDATE board
+		SET
+		boardRe = boardRe + 1
+		WHERE boardId = #{boardId}
+	</update>
+
+	<!-- 조회수 증가 없이 게시글 정보만 가져오는 -->
+	<select id="getBoardByIdWithoutIncrement" parameterType="int"
+		resultType="com.harunichi.board.vo.BoardVo">
+		SELECT boardId, boardCont, boardWriter, boardDate,
+		boardCate,
+		boardCount, boardImg1, boardImg2, boardImg3, boardImg4,
+		boardModDate, boardWriterId
+		FROM board
+		WHERE boardId =
+		#{boardId}
+	</select>
+
+	<!-- 게시글 삭제 -->
+	<delete id="deleteBoard" parameterType="int">
+		DELETE FROM board
+		WHERE
+		boardId = #{boardId}
+	</delete>
+
+	<!-- 게시글 좋아요 수 업데이트 -->
+	<update id="updateBoardLikeCount"
+		parameterType="com.harunichi.board.vo.BoardVo">
+		UPDATE board
+		SET boardLike = #{boardLike}
+		WHERE boardId =
+		#{boardId}
+	</update>
+
+	<!-- 게시글의 좋아요 데이터 삭제 -->
+	<delete id="deleteLikesByBoardId" parameterType="int">
+		DELETE FROM
+		boardLike WHERE boardLikePost = #{boardId}
+	</delete>
+
+	<!-- 게시글 검색(회원용) -->
+	<select id="searchBoards" parameterType="string"
+		resultType="com.harunichi.board.vo.BoardVo">
+		SELECT
+		boardId, boardWriter, boardCont, boardDate,
+		boardLike,
+		boardCount, boardRe, boardCate, boardImg1, boardImg2,
+		boardImg3, boardImg4, boardWriterId
+		FROM board
+		WHERE boardCont LIKE
+		CONCAT('%', #{keyword}, '%')
+		OR boardWriter LIKE CONCAT('%',
+		#{keyword}, '%')
+		OR boardWriterId LIKE CONCAT('%', #{keyword}, '%')
+		ORDER BY boardDate DESC
+	</select>
+
+	<!-- 조회수 높은 상위 5개 게시글 -->
+	<select id="selectTop5ByViews"
+		resultType="com.harunichi.board.vo.BoardVo">
+		SELECT boardId, boardWriter, boardCont, boardDate,
+		boardCount, boardCate
+		FROM board
+		ORDER BY boardCount DESC
+		LIMIT 5
+	</select>
+
+	<!-- 조회수 높은 상위 100개 게시글 -->
+	<select id="selectTop100ByViews"
+		resultType="com.harunichi.board.vo.BoardVo">
+		SELECT boardId, boardWriter, boardCont, boardDate,
+		boardCount, boardCate, boardLike, boardImg1, boardRe
+		FROM board
+		ORDER BY boardCount DESC
+		LIMIT 100
+	</select>
+
+	<select id="selectBoardsByCategory" parameterType="string"
+		resultType="com.harunichi.board.vo.BoardVo">
+		SELECT * FROM board
+		WHERE boardCate = #{category}
+		ORDER BY
+		boardDate DESC
+	</select>
+
+	<!-- 관리자용 -->
+	<select id="selectAllBoardsForAdmin"
+		resultType="com.harunichi.board.vo.BoardVo">
+		SELECT * FROM board ORDER BY boardDate DESC
+	</select>
+
+	<!-- 게시글 수정 (관리자용) -->
+	<update id="updateBoardForAdmin"
+		parameterType="com.harunichi.board.vo.BoardVo">
+		UPDATE board
+		SET boardWriter = #{boardWriter},
+		boardCont =
+		#{boardCont},
+		boardCate = #{boardCate}
+		WHERE boardId = #{boardId}
+	</update>
+
+	<select id="searchBoardsForAdmin"
+		resultType="com.harunichi.board.vo.BoardVo">
+		SELECT * FROM board
+		<where>
+			<choose>
+				<when test="searchType == 'all'">
+					(boardWriter LIKE CONCAT('%', #{keyword}, '%')
+					OR
+					boardCont LIKE CONCAT('%', #{keyword}, '%')
+					OR boardCate LIKE
+					CONCAT('%', #{keyword}, '%'))
+				</when>
+				<when test="searchType == 'writer'">
+					boardWriter LIKE CONCAT('%', #{keyword}, '%')
+				</when>
+				<when test="searchType == 'content'">
+					boardCont LIKE CONCAT('%', #{keyword}, '%')
+				</when>
+				<when test="searchType == 'category'">
+					boardCate LIKE CONCAT('%', #{keyword}, '%')
+				</when>
+			</choose>
+		</where>
+		ORDER BY boardId DESC
+	</select>
+
+</mapper>

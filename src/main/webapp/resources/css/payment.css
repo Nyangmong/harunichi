@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+/* payment */
+
+.payment-wrapper {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.payment-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.payment-price {
+    font-size: 18px;
+    color: #0077cc;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.payment-option {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.payment-option label {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+select#pgSelect {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+.btn-pay {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: #4FC3F7;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 16px;
+}
+
+.btn-pay:hover {
+    background-color: #29b6f6;
+}
+
+.btn-back {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 16px;
+    background-color: #f2f2f2;
+    color: #555;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-back:hover {
+    background-color: #e0e0e0;
+}
+
+.payment-result {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 성공 메시지 */
+.payment-result.success {
+    background-color: #e6f7ff;
+    border: 2px solid #A3DAFF;
+    color: #007acc;
+}
+
+/* 실패 메시지 */
+.payment-result.fail {
+    background-color: #fff1f1;
+    border: 2px solid #ffb3b3;
+    color: #cc0000;
+}
+
+/* 제목 */
+.payment-result h2 {
+    font-size: 1.8em;
+    margin-bottom: 16px;
+}
+
+/* 버튼 영역 */
+.payment-result .buttons {
+    margin-top: 30px;
+}
+
+/* 버튼 공통 스타일 */
+.payment-result .btn {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #A3DAFF;
+    color: #003366;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.payment-result .btn:hover {
+    background-color: #bfe6ff;
+    color: #002244;
+}
+
+/* 주문 내역 리스트 */
+.order-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.order-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #A3DAFF;
+    padding-bottom: 10px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.order-table th,
+.order-table td {
+    padding: 14px 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.order-table th {
+    background-color: #e9f6ff;
+    color: #005b9f;
+}
+
+.order-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.order-none {
+    padding: 60px;
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+}
+
+/* 공통 버튼 스타일 */
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* 환불 버튼 */
+.btn-cancel {
+    background-color: #ff5c5c;
+    color: #fff;
+}
+
+.btn-cancel:hover {
+    background-color: #e64545;
+}

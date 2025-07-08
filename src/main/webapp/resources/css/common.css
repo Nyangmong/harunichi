@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* 버튼색상 : #A3DAFF 하늘색 */
+/* 마우스호버 : #bfe6ff 연한하늘색 */
+/* 기본 글자색 : #222 */
+/* 연한 글자색 : #888 */
+*, *::before, *::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+	color: #222;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+/*버튼 기본 스타일 제거*/
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+   	height: auto;
+   	min-height: 100%;
+    overflow: auto;
+}
+/*인풋 기본 스타일 제거*/
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: #000 !important;
+}

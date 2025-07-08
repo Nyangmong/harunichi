@@ -1,0 +1,487 @@
+@charset "UTF-8";
+
+.chat-center-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+/* 채팅 전체 화면 */
+#chatContainer {
+	width: 100%;
+	max-width: 800px;
+	min-width: 400px;
+	height: 67vh;
+	min-height: 300px;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+/* 채팅방 상단 부분 */
+#chatTop {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	background-color: #d4edf7;
+	padding: 10px;
+}
+.chat-top-left {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.profile-img {
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	object-fit: cover;
+}
+.room-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.room-title {
+	font-weight: bold;
+	font-size: 18px;
+}
+.user-count {
+	margin-left: 4px;
+}
+
+/* 채팅방 상단 우츨 */
+.chat-top-right {
+	position: absolute;
+	top: 5px;
+  	right: 10px;
+	align-items: center;
+}
+.disconnect-btn {
+	font-size: 15px;
+	padding: 3px;
+	border-radius: 50%; 
+	transition: all 0.2s ease;
+	display: inline-block;
+	cursor: pointer;
+	width: 24px;
+	height: 24px;
+}
+.disconnect-btn:hover {
+	background-color: #a3daff; 
+}
+.chat-setting {
+    border-radius: 50%;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+}
+.chat-setting:hover {
+	background-color: #a3daff; 
+}
+.search-icon {
+	position: relative;
+	right: 154px;
+}
+
+/* 대화 검색 */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+.hidden {
+  display: none;
+}
+#searchNavigation i {
+	font-size: 22px;
+}
+
+/* 채팅방 설정 드롭다운 */
+#chatSettingMenu {
+	position: absolute;
+	top: 29px; 
+	right: -17px;
+	background: white;
+	border: 1px solid #ccc;
+	width: 130px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+	z-index: 998;
+}
+#chatSettingMenu span {
+	margin-right: 5px;	
+}
+.chat-setting-menu.hidden {
+	display: none;
+}
+
+.chat-setting-list {
+	padding: 7px 0 7px 10px;
+	cursor: pointer;
+	font-size: 14px;
+}
+.chat-setting-list:hover {
+	background-color: #e6e6e6;
+}
+#searchBar {
+	display: inline-block;
+	border: 1px solid #fff;
+	border-radius: 15px;
+	background-color: #fff;
+	overflow: hidden;
+	position: absolute;
+	top: 2px;
+	right: 55px;
+	height: 22px;
+	width: 155px	
+}
+#searchBar.hidden {
+	display: none;
+}
+#searchBar input[type="text"] {
+	border: none;
+	outline: none;
+	margin-left: 5px;
+	width: 115px;	
+}
+#searchBar input[type="text"]::placeholder {
+	color: #ccc;
+}
+#searchBar:has(input:focus) {
+  border: 1px solid #757575;
+}
+#searchBar button {
+	margin-right: 10px;
+	color: #757575;
+	position: relative;
+	top: -18px;
+	left: 122px;
+	font-size: 13px;
+}
+#searchBar button:hover {
+	font-weight: bold;
+}
+
+/* 중고거래 상품 정보 보여주는 영역 */
+#productWrap {
+	background-color: #fcfcfc;
+	width: 100%;
+	height: 60px;	
+	display: flex;
+	position: relative;
+}
+#productInfo {
+	padding: 7px 0;
+	font-size: 15px;
+}
+.product-img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+	margin: 0 10px 0 20px;
+}
+.product-status {
+	margin-right: 10px
+}
+.product-status{
+	margin-right: 10px;
+}
+.bold {
+	font-weight: bold;
+}
+.product-btn-wrap {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    gap: 7px;
+    flex-direction: row;
+    align-items: center;
+    height: 25px;
+    align-items: center;
+}
+.product-btn {
+	padding: 4px 10px;
+	background-color: #eee;
+	border-radius: 5px;
+	font-size: 14px;
+	color: #333;
+	text-decoration: none;
+	white-space: nowrap;
+}
+.product-btn:hover {
+	background-color: #e2e2e2;
+}
+.pay {
+	background-color: #FFBFA3;
+}
+.pay:hover {
+	background-color: #FFA07A;		
+}
+.sold-out{
+	filter: grayscale(100%);	
+}
+
+/* 대화창 */
+#messageContainer {
+	width: 100%;
+	height: 90%;
+	padding: 10px;
+	overflow: scroll;
+	padding: 5px;
+	display: flex;
+  	flex-direction: column;
+}
+
+/* 서버메세지 */
+.server-mag {
+	text-align: center;
+	background-color: #fcfcfc;
+	margin: 5px 0;
+}
+
+/* 하단 입력창 전체 */
+#inputContainer {
+	width: 100%;
+	display: flex;
+	align-content: center;
+	border: 1px solid #d1d1d1;
+	padding: 5px 10px;
+	margin-top: 10px;
+	align-items: center;
+}
+/* 메세지 입력창 input */
+#chatMessage {
+	flex: 1;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	padding: 8px;
+	height: 100px;
+}
+/* 전송 버튼 */
+#sendBtn {
+	position: relative;
+	background-color: #d4edf7;
+	border: none;
+	padding: 8px 20px;
+	margin-left: 10px;
+	border-radius: 15px;
+	cursor: pointer;
+	font-weight: bold;
+	height: 60px;
+}
+#sendBtn:disabled {
+	cursor: not-allowed;
+	background-color: #e0e0e0;  
+}
+
+
+/* 메세지 */
+.my-msg, .other-msg {
+	max-width: 60%;
+	padding: 8px 12px;
+	margin: 4px 0;
+	border-radius: 10px;
+	position: relative;
+	display: inline-block;
+	word-break: break-word;
+	color: black;
+}
+.my-msg {
+	background-color: #d4edf7;
+	align-self: flex-end;
+}
+.other-msg {
+	background-color: #f1f0f0;
+	align-self: flex-start;
+	margin-bottom: 20px;
+}
+.my-msg .time,
+.other-msg .time {
+	display: block;
+	font-size: 0.75em;
+	color: #666;
+	text-align: right;
+	margin-top: 5px;
+}
+.date-text {
+    margin: 5px 0;
+    width: 150px;
+    text-align: center;
+    align-self: center;
+    border-bottom: 2px solid #d4edf7;
+    padding-bottom: 2px;
+}
+.nickname {
+	font-size: 14px;
+    font-weight: bold;
+    color: #757575;
+}
+
+/* 채팅방 정보 모달창 */
+.chat-info-modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0; top: 0;
+	width: 100%; height: 100%;
+	background-color: rgba(0,0,0,0.4);
+}
+.chat-info-modal h2 {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	color: #a3daff;
+	text-align: center;
+}
+.chat-img-wrap {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin: 30px 0 10px 0;
+}
+.chat-profile-img{
+  	width: 120px;
+	height: 120px;
+	border-radius: 100%;
+	object-fit: cover;
+}
+.adit-profile-img.hidden{
+	display: none;
+}
+.adit-profile-img {
+	position: absolute;
+	bottom: 0;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	right: calc(50% - 60px + 5px);
+}
+.modal-content {
+	background-color: #fff;
+	margin: 10% auto auto;
+	padding: 20px;
+	border-radius: 8px;
+	width: 430px;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+#updateChatForm {
+	display: block;
+	align-content: center;
+	margin: 0 10px 30px 10px;
+}
+#chatInfoWrap label {
+	display: flex;
+}
+#chatInfoWrap label.hidden {
+	display: none;
+}
+.modal-input-msg {
+	font-size: 13px;
+	color: #7d7d7d;
+	margin-bottom: 15px;
+}
+.modal-input-msg.hidden {
+	display: none;
+}
+.err {
+	color: red;	
+}
+.chat-info-wrap {
+	display: block;
+    justify-self: center;
+    margin-bottom: 40px;
+}
+.chat-title {
+	font-size: 23px;
+	font-weight: bold;
+}
+.chat-title.hidden {
+	display: none;
+}
+.chat-persons {
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    position: relative;
+}
+.chat-form {
+	display: block;
+	width: 100%;
+	height: 35px;
+	border: 1px solid #ccc; 
+	position: relative;
+	font-size: 23px;
+	font-weight: bold;
+	text-align: center;
+}	
+.chat-form.hidden {
+	display: none;
+}
+.modal-btn-wrap {
+	display: flex;
+	justify-content: center;
+	gap: 10px; 
+	margin-top: 50px;
+}
+.modal-btn {
+	padding: 8px 16px;
+	background-color: #a3daff;
+	border-radius: 4px;
+	cursor: pointer;
+	color: white;
+}
+.modal-btn:hover {
+	background-color: #53a5dc; 
+}
+#editCancelBtn {
+	background-color: #FFBFA3;
+}
+#editCancelBtn:hover {
+	background-color: #FFA07A;		
+}
+.close {
+	float: right;
+	font-size: 20px;
+	cursor: pointer;
+}
+.user-list {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); 
+	grid-template-rows: repeat(4, auto);  
+	gap: 10px; 
+	list-style: none;
+	padding: 0;	
+}
+.user-list li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px;
+	border-radius: 8px;
+}	
+.user-profile-img {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	object-fit: cover;	
+}
+.bi-star-fill {
+	fill: gold !important;
+}
+	
+	
+	
+	
+	

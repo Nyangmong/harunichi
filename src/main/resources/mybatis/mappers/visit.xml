@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.visit">
+
+	<!-- 방문자 insert -->
+	<insert id="insertVisit" parameterType="String">
+		INSERT INTO visit (ip) VALUES (#{ip})
+	</insert>
+
+	<!-- 오늘 방문자 수 -->
+	<select id="selectTodayVisitCount" resultType="int">
+		SELECT COUNT(*)
+		FROM visit
+		WHERE DATE(visit_time) = CURDATE()
+	</select>
+
+	<!-- 전체 누적 방문자 수 -->
+	<select id="selectTotalVisitCount" resultType="int">
+		SELECT COUNT(*)
+		FROM visit
+	</select>
+
+	<!-- 최근 7일 방문자 수 추이 -->
+	<select id="selectVisitTrend7Days" resultType="visitVo">
+		SELECT DATE(visit_time) AS date, COUNT(*) AS cnt
+		FROM visit
+		WHERE visit_time >= CURDATE() - INTERVAL 6 DAY
+		GROUP BY DATE(visit_time)
+		ORDER BY date
+	</select>
+
+</mapper>

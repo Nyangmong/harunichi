@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace를 "mapper.member"로 꼭 맞춰주기 -->
+<mapper namespace="mapper.member">
+
+	<!-- 아이디로 회원 정보 조회 -->
+	<select id="selectMemberById" parameterType="String"
+		resultType="memberVo"> <!-- modelConfig.xml에 등록한 memberVo 별칭 -->
+    <![CDATA[
+        SELECT
+            id,
+            pass,
+            name,
+            nick,
+            contry,
+            year,
+            gender,
+            email,
+            tel,
+            address,
+            myLike,
+            profileImg,
+            follower,
+            joindate,
+            kakao_id,
+            naver_id
+        FROM
+            member
+		 WHERE
+            id = #{id}
+	]]>
+	</select>
+
+	<!-- 카카오 ID로 회원 정보 조회 -->
+	<select id="selectMemberByKakaoId" parameterType="String"
+		resultType="memberVo">
+        <![CDATA[
+        SELECT
+            id,
+            pass,
+            name,
+            nick,
+            contry,
+            year,
+            gender,
+            email,
+            tel,
+            address,
+            myLike,
+            profileImg,
+            follower,
+            joindate,
+            kakao_id,
+            naver_id
+        FROM
+            member
+        WHERE
+            kakao_id = #{kakaoId}
+        ]]>
+	</select>
+
+	<!-- 네이버 ID로 회원 정보 조회 -->
+	<select id="selectMemberByNaverId" parameterType="String"
+		resultType="memberVo">
+        <![CDATA[
+        SELECT
+            id,
+            pass,
+            name,
+            nick,
+            contry,
+            year,
+            gender,
+            email,
+            tel,
+            address,
+            myLike,
+            profileImg,
+            follower,
+            joindate,
+            kakao_id,
+            naver_id
+        FROM
+            member
+        WHERE
+            naver_id = #{naverId}
+        ]]>
+	</select>
+
+	<!-- 이메일로 회원 정보 조회 -->
+	<select id="selectMemberByEmail" parameterType="String"
+		resultType="memberVo">
+		SELECT * FROM member WHERE email = #{email}
+	</select>
+
+	<!-- 아이디와 비밀번호로 회원 정보 조회 (로그인시 필요함) -->
+	<select id="loginByIdAndPw" parameterType="map"
+		resultType="memberVo">
+    <![CDATA[
+        SELECT
+            id,
+            pass,
+            name,
+            nick,
+            contry,
+            year,
+            gender,
+            email,
+            tel,
+            address,
+            myLike,
+            profileImg,
+            follower,
+            joindate,
+            kakao_id,
+            naver_id
+        FROM
+            member
+		 WHERE
+            id = #{userId}
+            AND pass = #{userPw}
+	]]>
+	</select>
+
+
+
+	<!-- 회원 가입 쿼리 --> <!-- joindate(가입일)은 테이블 생성시 자동생성되므로, insert쿼리문에서 삭제했음 -->
+	<insert id="insertMember" parameterType="memberVo">
+        <![CDATA[
+        INSERT INTO member (
+            id,
+            pass,
+            name,
+            nick,
+            contry,
+            year,
+            gender,
+            email,
+            tel,
+            address,
+            myLike,
+            profileImg,
+            follower,
+            kakao_id,
+            naver_id
+        ) VALUES (
+            #{id},
+            #{pass},
+            #{name},
+            #{nick},
+            #{contry},
+            #{year},
+            #{gender},
+            #{email},
+            #{tel},
+            #{address},
+            #{myLike},
+            #{profileImg},
+            #{follower},
+            #{kakao_id},
+            #{naver_id}
+        )
+        ]]>
+	</insert>
+
+	<!-- DB에 id존재 여부 확인 -->
+	<select id="countById" parameterType="String" resultType="int">
+		SELECT
+		COUNT(*) FROM member WHERE id = #{id}
+	</select>
+
+	<!-- 멤버어드민 -->
+	<!-- 회원 업데이트 -->
+	<update id="updateMember" parameterType="memberVo">
+		<![CDATA[
+		    UPDATE member
+		    SET
+		        pass = #{pass},
+		        name = #{name},
+		        nick = #{nick},
+		        email = #{email},
+		        year = #{year},
+		        gender = #{gender},
+		        tel = #{tel},
+		        address = #{address},
+		        contry = #{contry},
+		        profileImg = #{profileImg},
+		        myLike = #{myLike}
+		    	WHERE id = #{id}
+		]]>
+	</update>
+
+	<!-- 전체 회원 목록 조회 -->
+	<select id="selectMemberList" parameterType="map"
+		resultType="memberVo">
+		SELECT
+		id,
+		pass,
+		name,
+		nick,
+		contry,
+		year,
+		gender,
+		email,
+		tel,
+		address,
+		myLike,
+		profileImg,
+		follower,
+		joindate,
+		kakao_id,
+		naver_id
+		FROM
+		member
+		<where>
+			<if test="searchKeyword != null and searchKeyword != ''">
+				<choose>
+					<when test="searchType == 'id'">
+						id LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<when test="searchType == 'nick'">
+						nick LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<when test="searchType == 'email'">
+						email LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<otherwise>
+						(id LIKE CONCAT('%', #{searchKeyword}, '%')
+						OR nick LIKE
+						CONCAT('%', #{searchKeyword}, '%')
+						OR email LIKE CONCAT('%',
+						#{searchKeyword}, '%'))
+					</otherwise>
+				</choose>
+			</if>
+		</where>
+		ORDER BY joindate DESC
+		LIMIT #{offset}, #{pageSize}
+	</select>
+
+	<!-- 전체 회원 수 조회 -->
+	<select id="selectMemberCount" parameterType="String"
+		resultType="int">
+		SELECT COUNT(*)
+		FROM member
+		<where>
+			<if test="searchKeyword != null and searchKeyword != ''">
+				<choose>
+					<when test="searchType == 'id'">
+						id LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<when test="searchType == 'nick'">
+						nick LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<when test="searchType == 'email'">
+						email LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<otherwise>
+						(id LIKE CONCAT('%', #{searchKeyword}, '%')
+						OR nick LIKE
+						CONCAT('%', #{searchKeyword}, '%')
+						OR email LIKE CONCAT('%',
+						#{searchKeyword}, '%'))
+					</otherwise>
+				</choose>
+			</if>
+		</where>
+	</select>
+
+	<!-- 회원 삭제 -->
+	<delete id="deleteMember" parameterType="String">
+		DELETE FROM member WHERE
+		id = #{id}
+	</delete>
+
+	<!-- 회원 프로필 이미지 초기화 -->
+	<update id="resetProfileImg" parameterType="String">
+		UPDATE member SET
+		profileImg = 'basic_profile.jpg' WHERE id = #{id}
+	</update>
+
+	<!-- 성별 분포 -->
+	<select id="selectGenderDistribution" resultType="map">
+		SELECT
+		CASE
+		WHEN gender = 'M' THEN '남성'
+		WHEN gender = 'F' THEN '여성'
+		ELSE '선택안함'
+		END AS label,
+		COUNT(*) AS value
+		FROM member
+		GROUP BY
+		CASE
+		WHEN gender = 'M' THEN '남성'
+		WHEN gender = 'F' THEN '여성'
+		ELSE '선택안함'
+		END
+	</select>
+
+	<!-- 국적 분포 -->
+	<select id="selectCountryDistribution" resultType="map">
+		SELECT
+		contry
+		AS label,
+		COUNT(*) AS value
+		FROM member
+		GROUP BY contry
+	</select>
+	
+	<!-- 내가 좋아요한 게시글 -->
+	<select id="selectMyLikedBoards" parameterType="String" resultType="com.harunichi.board.vo.BoardVo">
+	    SELECT B.*
+	    FROM board B
+	    JOIN boardlike L ON B.boardId = L.boardLikePost
+	    WHERE L.boardLikeUser = #{memberId}
+	    ORDER BY B.boardDate DESC
+	</select>
+	
+	<!-- 내가 쓴 게시글 -->
+	<select id="selectMyBoards" parameterType="String" resultType="com.harunichi.board.vo.BoardVo">
+	    SELECT *
+	    FROM board
+	    WHERE boardWriterId = #{_parameter}
+	    ORDER BY boardDate DESC
+	</select>
+	
+	<!-- 내가 좋아요한 게시글에서 회원id만 -->
+	<select id="selectLikedBoardIds" parameterType="String" resultType="int">
+	    SELECT boardLikePost 
+	    FROM boardlike 
+	    WHERE boardLikeUser = #{memberId}
+	</select>
+	
+</mapper>

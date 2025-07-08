@@ -1,0 +1,143 @@
+@charset "UTF-8";
+.add-member-write-form-wrap{
+	width: calc(100% - 20px);
+	max-width: 768px;
+	margin: 0 auto;
+}
+h2{
+	font-weight: 400;
+	width: 100%;
+	padding: 40px;
+	text-align: center;
+	}
+
+.member-form-inner > p{
+	font-size: 14px;
+	margin-left: 10px;
+	padding: 10px 0;
+}
+.member-form-inner:nth-of-type(1) > p {
+	color: #A3DAFF;
+	font-weight: bold;
+}
+.member-form-inner:nth-of-type(2) > p {
+	color: #888;
+}
+
+#required-form, #other-form{
+	width: 100%;
+	border: 1px solid #ddd;
+	border-radius: 15px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+hr{
+	border: none;
+	border-top: 2px solid #eee;
+	margin: 40px 0 10px 0;
+}
+.form-group{
+	border-bottom: 1px solid #ddd;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+#required-form:last-child, #other-form:last-child{
+	border-bottom: none;
+}
+.error {
+	color: red;
+	font-size: 0.9em;
+}
+input{
+	width: 100%;
+	border: none;
+    padding: 15px;
+    outline: none;
+    font-size: 14px;
+}
+
+#idCheckText span, #error-pass, #error-passConfirm, #error-year {
+	font-size: 0.9em;
+	display: inline; /* 줄바꿈 방지 */
+	white-space: nowrap; /* 내용이 넘쳐도 줄바꿈 안됨 */
+}
+#id-check-required{
+	color: red;
+}
+#error-pass, #error-passConfirm, #error-year {
+	margin-right: 20px;
+}
+
+input[readonly] {
+    cursor: default;
+}
+
+#checkIdBtn, #searchAddressBtn{
+	color: #777;
+	font-size: 14px;
+	border: 1px solid #999;
+	border-radius: 8px;
+  	height: 30px;
+  	width:80px;
+ 	flex-shrink: 0;
+}
+#checkIdBtn{margin-right: 10px;}
+#checkIdBtn:hover, #searchAddressBtn:hover{
+	color: white;
+	background-color: #999;
+}
+
+.gender-group {
+  gap: 0;
+  padding: 10px;
+}
+input[type="radio"]{
+	display: none;
+}
+.gender-group label {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+}
+.gender-group label:first-of-type {
+  border-radius: 8px 0 0 8px;
+}
+.gender-group label:last-of-type {
+  border-radius: 0 8px 8px 0;
+}
+.gender-group label + input[type="radio"] + label {
+  border-left: none; /* 중간에 겹치는 테두리 없애기 */
+}
+
+/* 선택됐을 때 스타일 */
+.gender-group input[type="radio"]:checked + label {
+  border-color: #A3DAFF;
+  color: #A3DAFF;
+  font-weight: bold;
+}
+
+#nextBtn {
+	margin: 40px 0;
+	width: 100%;
+	padding: 12px 0;
+	font-size: 16px;
+	border: none;
+	border-radius: 6px;
+	background-color: #ccc;
+	color: white;
+	cursor: default;
+	transition: background-color 0.2s ease;
+}
+
+#nextBtn:enabled {
+  background-color: #A3DAFF;  /* 활성화 시 파란색 */
+  cursor: pointer;
+}
