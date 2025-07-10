@@ -15,8 +15,8 @@ import java.util.Scanner;
 @Service
 public class IamportServiceImpl implements IamportService {
 
-    private static final String API_KEY = "1624017307618456" ; // "발급받은_REST_API_KEY";
-    private static final String API_SECRET = "oDvHXrzkyebci4GoT0vsYWB7VnwyVlTXJhSGMcw9Xk50wQx23ru1ML7RvLcZO7ggxWTcOVRG2dwdah8a"; // "발급받은_REST_API_SECRET";
+    private static final String API_KEY = "발급받은_REST_API_KEY" ; // "발급받은_REST_API_KEY";
+    private static final String API_SECRET = "발급받은_REST_API_SECRET"; // "발급받은_REST_API_SECRET";
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 

@@ -44,7 +44,7 @@ public class TranslateController {
 	        return text;
 	    }
 
-	    String apiKey = "AIzaSyCZEw9xe1tr9MKRlAf4FCM3uTj8DQ2SuaQ"; // 유효한 API 키 사용
+	    String apiKey = "유효한 API 키 사용"; // 유효한 API 키 사용
 	    String urlStr = "https://translation.googleapis.com/language/translate/v2?key=" + apiKey;
 
 	    URL url = new URL(urlStr);
